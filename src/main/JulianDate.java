@@ -26,4 +26,21 @@ public class JulianDate {
     //Constructors
     public JulianDate() {
     }
+
+    public JulianDate(int year, int month, int day) {
+    }
+
+
+    //Methods
+    public void daysBetween() {
+
+    }
+
+    public void tomorrow() {
+
+    }
+
+    public void yesterday() {
+
+    }
 }
