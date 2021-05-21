@@ -3,34 +3,33 @@ package result.test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.Assert;
 import result.main.JulianDate;
-
-import java.util.Optional;
-
-import static org.junit.Assert.assertEquals;
 
 class JulianDateTest {
 
-	private JulianDate julianDate;
+	private JulianDate refJulianDate1;
+	private JulianDate refJulianDate2;
 
 	@BeforeEach
 	public void setUp() throws Exception {
-		julianDate = new JulianDate(1582, 10, 15);
+		refJulianDate1 = new JulianDate(1582, 10, 15);
+		refJulianDate2 = new JulianDate(1582, 10, 20);
 	}
 
 	@Test
 	@DisplayName("Test if converting a date to Julian date works correctly")
 	void testConvertDateToJulianDate() {
-		assertEquals(julianDate, 2299160.5);
+		Assert.assertEquals(2299160.5, refJulianDate1.julianDayNumber, 0.0);
 	}
-	
+
+
 	@Test
 	@DisplayName("Test if the daysBetween method works correctly")
 	void testDaysBetweenTwoDate() {
-		JulianDate date1 = new JulianDate(1582, 10, 15);
-		JulianDate date2 = new JulianDate(1582, 10, 20);
-		assertEquals(Optional.of(5), julianDate.daysBetween(date2));
+		Assert.assertEquals(5, refJulianDate1.daysBetween(refJulianDate2), 0.0);
 	}
+
 
 	@Test
 	@DisplayName("Test if the tomorrow method works correctly")
