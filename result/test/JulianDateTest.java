@@ -30,18 +30,21 @@ class JulianDateTest {
 		Assert.assertEquals(5, refJulianDate1.daysBetween(refJulianDate2), 0.0);
 	}
 
+	@Test
+	@DisplayName("Test if the today method works correctly")
+	void testToday() {
+	Assert.assertNotNull(refJulianDate1.today());
+	}
 
 	@Test
 	@DisplayName("Test if the tomorrow method works correctly")
 	void testTomorrow() {
-		//TODO Test erstellen
+		Assert.assertNotNull(refJulianDate1.tomorrow());
 	}
 
 	@Test
 	@DisplayName("Test if the yesterday method works correctly")
 	void testYesterday() {
-
-		//TODO Test erstellen
-
+		Assert.assertNotNull(refJulianDate1.yesterday());
 	}
 }

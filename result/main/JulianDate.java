@@ -1,6 +1,7 @@
 package result.main;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * This class contains the new datatype JulianDate
@@ -14,7 +15,6 @@ public class JulianDate {
     /** variables and fields **/
     public static final LocalDateTime START_DATE = LocalDateTime.of(-4712, 1, 1, 12,0, 0, 0);
     public float julianDayNumber;
-
 
     /** Constructors **/
     public JulianDate() {
@@ -38,17 +38,29 @@ public class JulianDate {
     }
 
     /**
+     * Returns today in Julian date
+     * @return Julian date in float
+     */
+    public float today() {
+        Date date = new Date();
+        return toJulianDate(date.getYear(), date.getMonth(), date.getDay());
+    }
+
+    /**
      * Returns tomorrow in Julian date
      */
-    public void tomorrow() {
-        //TODO Methode erstellen
+    public float tomorrow() {
+        float tomorrow = today() + 1;
+        return tomorrow;
     }
 
     /**
      * Returns yesterday in Julian date
+     * @return
      */
-    public void yesterday() {
-        //TODO Methode erstellen
+    public float yesterday() {
+        float yesterday = today() - 1;
+        return yesterday;
     }
 
     /**

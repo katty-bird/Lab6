@@ -2,7 +2,6 @@ package result.main;
 
 /**
  * This class handle the MetricDate system.
- * @author katja
  * @author lucas
  * @version 0.1
  */
