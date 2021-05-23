@@ -23,12 +23,18 @@ class JulianDateTest {
 		Assert.assertEquals(2299160.5, refJulianDate1.julianDayNumber, 0.0);
 	}
 
-
 	@Test
 	@DisplayName("Test if the daysBetween method works correctly")
 	void testDaysBetweenTwoDate() {
 		Assert.assertEquals(5, refJulianDate1.daysBetween(refJulianDate2), 0.0);
 	}
+
+    @Test
+    @DisplayName("Test if the isAfter method works correctly")
+    void testisAfter() {
+        Assert.assertFalse(refJulianDate1.isAfter(refJulianDate2));
+        Assert.assertTrue(refJulianDate2.isAfter(refJulianDate1));
+    }
 
 	@Test
 	@DisplayName("Test if the today method works correctly")

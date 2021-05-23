@@ -24,6 +24,23 @@ public class JulianDate {
     	this.julianDayNumber = this.toJulianDate(year, month, day);
     }
 
+
+    public static void main (String args []) {
+        System.out.println("Start date: " + START_DATE);
+        System.out.println("DOW: " + START_DATE.getDayOfWeek());
+        System.out.println("Julian date: " + toJulianDate(1582, 10, 15));
+        System.out.println(new JulianDate(1986,10,4).julianDayNumber);
+        System.out.println((int)(new JulianDate(1986,10,4).julianDayNumber) % 7);
+    }
+    /**
+     * Returns true if date is after compareDate, false otherwise
+     * @param compareDate
+     * @return
+     */
+    public boolean isAfter(JulianDate compareDate) {
+        return this.julianDayNumber > compareDate.julianDayNumber;
+    }
+
     /**
      * Returns the days between given date and Julian day
      * @param compareDate
@@ -47,7 +64,8 @@ public class JulianDate {
     }
 
     /**
-     * Returns tomorrow in Julian date
+     * Calculate the tomorrow day in Julian date
+     * @return tomorrow in Julian date
      */
     public float tomorrow() {
         float tomorrow = today() + 1;
@@ -55,8 +73,8 @@ public class JulianDate {
     }
 
     /**
-     * Returns yesterday in Julian date
-     * @return
+     * Calculate the yesterday day in Julian date
+     * @return yesterday in Julian date
      */
     public float yesterday() {
         float yesterday = today() - 1;
